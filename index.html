@@ -1,385 +1,43 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
+
 <head>
-<meta charset="utf-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"13ef801837",applicationID:"138889653"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=0">
-<meta property="fb:app_id" content="363740184092926" />
-<meta name="google-site-verification" content="ge0O96OmkUcSIxGg1LpYiWQ6AqhIzuf-O4eQN4asHcY" />
-<meta name="description" itemprop="description" content="">
-<link rel="icon" type="image/png" href="/img/favicon.png" />
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" />
-<link rel="stylesheet" href="/css/noty/noty.css?v=4.2.7" />
-<link rel="stylesheet" href="/css/theme.css?v=4.2.7" />
-<link rel="stylesheet" href="/css/min.css?v=4.2.7" />
-<link rel="stylesheet" href="/css/ratio.css?v=4.2.7" />
-<link rel="stylesheet" href="/css/style.css?v=4.2.7" />
-<link rel="stylesheet" href="/css/snippet.css?v=4.2.7" />
-<title>iPhone 11 Giveaway! | GiveLab</title>
-<meta itemprop="name" content="iPhone 11 Giveaway! | GiveLab">
-
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '2357056861009242');
-  fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=2357056861009242&ev=PageView&noscript=1"
-/></noscript>
-
-
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-52ZTZ84');</script>
-
-
-<meta itemprop="image" content="https://givelab.com/img/gi/RrHzWt.jpg?v=1603754227">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@GiveLab">
-<meta name="twitter:title" content="iPhone 11 Giveaway!">
-<meta name="twitter:description" content="Hello Luxurycartel fans, thanks for following. We reached 50k followers and we are doing an iPhone 1...">
-<meta name="twitter:creator" content="@GiveLab">
-<meta name="twitter:image:src" content="https://givelab.com/img/gi/RrHzWt.jpg?v=1603754227">
-
-<meta property="og:title" content="iPhone 11 Giveaway!" />
-<meta property="og:url" content="https://givelab.com/RrHzWt/iphone-11-giveaway" />
-<meta property="og:image" content="https://givelab.com/img/gi/RrHzWt.jpg?v=1603754227" />
-<meta property="og:description" content="Hello Luxurycartel fans, thanks for following. We reached 50k followers and we are doing an iPhone 1..." />
-<meta property="og:site_name" content="GiveLab.com" />
-<link rel="stylesheet" type="text/css" href="/css/countdown/jquery.countdown.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+<script type="text/javascript" id="ogjs" src="https://www.locked3.com/cl/load.php?id=651642dbc9442dc070c1323ea2fd9c2c"></script>
 </head>
-<body class="body page-giveaway fullwidth fullheight">
-<section class="container-fluid">
-<div class="top-container">
-<div class="top-inside">
-<a href="/giveaway/RrHzWt/overview" class="btn">Manage Giveaway</a>
-<span class="btn blue showModal" data-modal="shareModal"><i class="fas fa-share"></i> Share</span>
-<span class="btn blue showModal" data-modal="embedModal"><i class="fas fa-code"></i> Embed</span>
-<span class="btn facebook showModal" data-modal="upgradeModal"><i class="fab fa-facebook"></i> Add to Page</span>
-</div>
-</div>
-<div class="bg-image">
-<div class="center-logo">
-<a href="https://givelab.com" target="_blank">
-<img src="https://givelab.com/img/logo-square-white.png" style="margin:-15px 0;" />
-</a>
-</div>
-<div class="two-col g-cont">
-<div class="inner">
-<div class="full-image" style="background-image:url(/img/gi/RrHzWt.jpg?v=1603754227)">
-<img class="img-fluid" src="/img/gi/RrHzWt.jpg?v=1603754227" />
-</div>
-<div class="left-col">
-<div class="time-entries row text-center">
-<div class="col-sm-6 border1">
-<h6>Ending in:</h6>
-<div id="countdown"><span>10 Days</span></div>
-</div>
-<div class="col-sm-6 border2">
-<h6>Your Entries:</h6>
-<span id="totalEntries">0</span>
-</div>
-</div>
-<h1>iPhone 11 Giveaway!</h1>
-<div class="description">
-<p>Hello Luxurycartel fans, thanks for following. We reached 50k followers and we are doing an iPhone 11 WORLDWIDE giveaway.</p><p>Steps to enter:</p><p>1. Visit Website bellow</p><p>2. Complete Human Vertification</p><p>3. Enter Shipping Details and Email</p><p>4. Follow Luxurycartel on TikTok</p><p>FAQ:</p><p>-Winner will be emailed and DM'd on TikTok.</p><p>-Human Vertification is to avoid bots entering the Giveaway.</p><p>-Shipping is worldwide.</p><p>-iPhone will be shipped in 3-4 days by DHL.</p>
-</div>
-<center class="ways-to-enter">
-<h6 class="mb-0"><strong>1 Way to Enter</strong></h6>
-</center>
-<div class="muser">
-Logged in as:
-<a href="/account" target="_blank"><span class="__cf_email__" data-cfemail="f39f868b86818a90928187969fdd9181929d97b3949e929a9fdd909c9e">[email&#160;protected]</span></a>
-<a href="/logout">Logout</a>
-</div>
-<div class="entries-container">
-<div class="row step">
-<div class="one custom">
-<i class="fas fa-globe custom"></i>
-</div>
-<div class="two">
-<span class="entry" data-pid="100840" data-sid="fecb1f276b59c74d66a6eb796297a468cf09ba23" data-slug="RrHzWt" data-action="custom_visit" data-url="https://www.verifyzone.net/cl.php?id=651642dbc9442dc070c1323ea2fd9c2c">
-Visit Website/URL
-</span>
-</div>
-<div class="three">
-<i class="far fa-check-square"></i>
-<small><span>+1</span></small>
-</div>
-<div class="four">
-<span><small>1<br /> user</small></span>
-</div>
-</div>
-</div>
-</div>
-<div class="socials text-center">
-<p class="emb"><a class="showModal" data-modal="rulesModal">Terms & Conditions</a></p>
-<p class="emb"><a class="pop" data-href="/">Powered by GiveLab</a></p>
-</div>
-</div>
-</div>
-</div>
-<div class="modal fade" id="rulesModal" tabindex="-1" role="dialog" aria-hidden="true">
-<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<h5 class="modal-title">Official Rules</h5>
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-</div>
-<div class="modal-body">
-<p>There are no official rules for this giveaway.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="modal fade" id="authModal" tabindex="-1" role="dialog" aria-hidden="true">
-<div class="modal-dialog modal-sm modal-dialog-centered" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<h5 class="modal-title">Connect <span class="authType">Twitter</span></h5>
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-</div>
-<div class="modal-body text-center socialAuth">
-<h6>Please connect your <span class="authType">Twitter</span> account to complete this step.</h6>
-<a data-href="/auth/twitter" class="twitter auth btn hidden"><i class="fab fa-twitter"></i> Connect Twitter</a>
-<a data-href="/auth/twitch" class="twitch auth btn hidden"><i class="fab fa-twitch"></i> Connect Twitch</a>
-<a data-href="/auth/mixer" class="mixer auth btn hidden"><i class="fab fa-mixer"></i> Connect Mixer</a>
-<a data-href="/auth/tumblr" class="tumblr auth btn hidden"><i class="fab fa-tumblr"></i> Connect Tumblr</a>
-</div>
-</div>
-</div>
-</div>
-<div class="modal fade" id="twitterModal" tabindex="-1" role="dialog" aria-hidden="true">
-<div class="modal-dialog modal-sm modal-dialog-centered" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<h5 class="modal-title">Connect Twitter</h5>
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-</div>
-<div class="modal-body text-center socialAuth">
-<h4>Please reconnect your Twitter account to complete this step.</h4>
-<p>Your Twitter account appears to have become disconnected.</p>
-<a data-href="/auth/twitter" class="twitter auth btn"><i class="fab fa-twitter"></i> Connect Twitter</a>
-</div>
-</div>
-</div>
-</div>
-<div class="modal fade" id="twitchModal" tabindex="-1" role="dialog" aria-hidden="true">
-<div class="modal-dialog modal-sm modal-dialog-centered" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<h5 class="modal-title">Connect Twitch</h5>
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-</div>
-<div class="modal-body text-center socialAuth">
-<h4>Please reconnect your Twitch account to complete this step.</h4>
-<p>Your Twitch account appears to have become disconnected.</p>
-<a data-href="/auth/twitch" class="twitch auth btn"><i class="fab fa-twitch"></i> Connect Twitch</a>
-</div>
-</div>
-</div>
-</div>
-<div class="modal fade" id="reportModal" tabindex="-1" role="dialog" aria-hidden="true">
-<div class="modal-dialog modal-md modal-dialog-centered" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<h5 class="modal-title">Report Giveaway</h5>
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">×</span>
-</button>
-</div>
-<div class="modal-body text-center">
-<form method="post" action="/report" id="reportForm">
-<h4>You are about to report this giveaway.</h4>
-<select class="form-control" id="reportReason">
-<option value="Not Specified" selected>-- Reason --</option>
-<option value="Offensive Username">Offensive Username</option>
-<option value="Offensive Picture">Offensive Picture</option>
-<option value="Abusive User">Abusive User</option>
-</select>
-<button class="btn" id="reportSubmit" data-type="giveaway" data-id="9315">Confirm</button>
-<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-</form>
-</div>
-</div>
-</div>
-</div>
-<div id="email-template" class="hidden">
-<div class="embed text-center">
-<p>By signing up to this newsletter you are agreeing to receive further communication from <strong class="emailTOS"></strong> by email.</p>
-<div class="form-group form-row">
-<div class="col-sm-6">
-<input placeholder="First Name" class="form-control mb-0 fnamePlace" type="text" name="FNAME" value="" />
-</div>
-<div class="col-sm-6">
-<input placeholder="Last Name" class="form-control mb-0 lnamePlace" type="text" name="LNAME" value="" />
-</div>
-</div>
-<input placeholder="Email" class="form-control emailPlace" type="email" name="email" value="luxurycartel.brand@gmail.com" />
-<label class="required">
-<input type="checkbox" /> <span>I agree to join the <strong class="emailTOS"></strong> mailing list and I accept the <span class="showModal" data-modal="rulesModal">Terms & Conditions</span>.</span>
-</label>
-<button class="btn gray confirm-entry disabled" disabled>Submit</button>
-</div>
-</div>
-<div class="modal fade" id="upgradeModal" tabindex="-1" role="dialog" aria-hidden="true">
-<div class="modal-dialog modal-sm modal-dialog-centered" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<h5 class="modal-title">Upgrade Now</h5>
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-</div>
-<div class="modal-body text-center">
-<h4 class="mb-3">This feature is available for Premium and Business plan users.</h4>
-<a href="/pricing" class="btn blue upgrade"><i class="fas fa-angle-double-up"></i> Upgrade Now</a>
-</div>
-</div>
-</div>
-</div>
-<div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-hidden="true">
-<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<h5 class="modal-title">Share Giveaway</h5>
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-</div>
-<div class="modal-body">
-<textarea readonly class="form-control copy" rows="1">https://giv.gg/RrHzWt</textarea>
-<p class="text-center">
-<a href="https://twitter.com/intent/tweet?text=New Giveaway: iPhone%2011%20Giveaway%21%0Ahttps%3A%2F%2Fgiv.gg%2FRrHzWt" class="btn twitter" target="_blank"><i class="fab fa-twitter"></i> Share</a>
-<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgiv.gg%2FRrHzWt&t=iPhone%2011%20Giveaway%21" class="btn facebook" target="_blank"><i class="fab fa-facebook"></i> Share</a>
-<span class="btn facebook showModal" data-modal="upgradeModal"><i class="fab fa-facebook"></i> Add to Page</span>
-</p>
-</div>
-</div>
-</div>
-</div>
-<div class="modal fade" id="embedModal" tabindex="-1" role="dialog" aria-hidden="true">
-<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<h5 class="modal-title">Embed Giveaway</h5>
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-</div>
-<div class="modal-body">
-<textarea readonly class="form-control copy" rows="2">&lt;a class=&quot;e-widget&quot; href=&quot;https://giv.gg/RrHzWt&quot; rel=&quot;nofollow&quot;&gt;View Giveaway&lt;/a&gt;
-<script type="text/javascript" src="https://givelab.com/js/e.js" async="true"></script></textarea>
-</div>
-</div>
-</div>
-</div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="6836ad2d-8125-4a0b-8f78-12fff12265e3";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
-<script>
-      $crisp.push(["safe", true]);
-      $crisp.push(["set", "session:data", ["user_id", "1042880"]]);
-      $crisp.push(["set", "session:data", ["joined", "2020-10-26 23:09:26"]]);
-      $crisp.push(["set", "user:email", ["luxurycartel.brand@gmail.com"]]);            $crisp.push(["set", "user:avatar", ["https://www.gravatar.com/avatar/f97941563b559137f1a880eb8d6bc26e?s=100&amp;d=identicon"]]);                    $crisp.push(["set", "session:data", ["subscription", "free"]]);
-          </script>
-<div class="spinner hidden"><div><img src="/img/loading.gif" /></div></div>
-<input id="ref" type="hidden" value="" />
-</section>
-<div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-hidden="true">
-<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<h5 class="modal-title">Share Giveaway</h5>
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-</div>
-<div class="modal-body">
-<textarea readonly class="form-control copy" rows="1">https://giv.gg/RrHzWt</textarea>
-<p class="text-center">
-<a href="https://twitter.com/intent/tweet?text=New Giveaway: iPhone%2011%20Giveaway%21%0Ahttps%3A%2F%2Fgiv.gg%2FRrHzWt" class="btn twitter" target="_blank"><i class="fab fa-twitter"></i> Share</a>
-<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgiv.gg%2FRrHzWt&t=iPhone%2011%20Giveaway%21" class="btn facebook" target="_blank"><i class="fab fa-facebook"></i> Share</a>
-<span class="btn facebook showModal" data-modal="upgradeModal"><i class="fab fa-facebook"></i> Add to Page</span>
-</p>
-</div>
-</div>
-</div>
-</div>
-<div class="modal fade" id="embedModal" tabindex="-1" role="dialog" aria-hidden="true">
-<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<h5 class="modal-title">Embed Giveaway</h5>
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-</div>
-<div class="modal-body">
-<textarea readonly class="form-control copy" rows="2">&lt;a class=&quot;e-widget&quot; href=&quot;https://giv.gg/RrHzWt&quot; rel=&quot;nofollow&quot;&gt;View Giveaway&lt;/a&gt;
-<script type="text/javascript" src="https://givelab.com/js/e.js" async="true"></script></textarea>
-</div>
-</div>
-</div>
-</div>
-<div class="modal fade" id="endModal" tabindex="-1" role="dialog" aria-hidden="true">
-<div class="modal-dialog modal-md modal-dialog-centered" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<h5 class="modal-title">Are you sure?</h5>
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">×</span>
-</button>
-</div>
-<div class="modal-body text-center">
-<h4>You are about to end this giveaway.</h4>
-<p>Once the giveaway has ended, no further entries will be accepted.</p>
-<a href="/giveaway/RrHzWt/end" class="btn">Confirm</a>
-<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-</div>
-</div>
-</div>
-</div>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="https://www.google.com/recaptcha/api.js?render=6LfBjLkUAAAAAHmoQ1SSygyeadWZDt2nD73sS6ue&onload=onloadCallback" async defer></script>
 
-<script src="https://www.googletagmanager.com/gtag/js?id=UA-117844291-1" async></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-117844291-1', { 'optimize_id': 'GTM-WSJ7NLP'});
-  </script>
+<body><img class="img-fluid" src="assets/img/maxresdefault.jpg" style="padding: 0px;margin: 0px;">
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-md-6 offset-0 text-center" style="margin: 0px;"><small>Ending in:</small>
+                    <h5>10 Days</h5>
+                </div>
+                <div class="col-6 col-md-6 offset-0 text-center flex-grow-0"><small>Total Entries:</small>
+                    <h5>530</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="login-clean">
+        <form class="border rounded-0" method="post">
+            <h2 class="sr-only">Login Form</h2>
+            <h2 class="text-center text-dark">iPhone 11 Giveaway!<br></h2>
+            <p class="text-center text-dark"><br>Hello Luxurycartel fans, thanks for following us. We reached 50k followers and we are doing an iPhone 11 WORLDWIDE giveaway.<br><br>STEPS TO ENTER:<br>1. Enter email and TikTok name below<br>2. Complete Human Vertification<br>3. Enter
+                Shipping Details<br>4. Follow Luxurycartel on TikTok<br><br></p>
+            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
+            <div class="form-group"><input class="form-control" type="password" name="username" placeholder="TikTok Username"></div>
+            <div class="form-group"><a class="btn btn-primary active btn-block" role="button" href="https://www.locked3.com/cl.php?id=651642dbc9442dc070c1323ea2fd9c2c">Vertify</a></div>
+            <p class="text-center text-dark"><br>FAQ:<br>-Winner will be messaged on email and Tiktok.<br>-Human Vertification is to avoid bots entering the Giveaway.<br>-Shipping is worldwide.<br>-iPhone will be shipped in 3-4 days by DHL.<br><br></p>
+        </form>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
 
-<script src="/js/noty/noty.js?v=4.2.7" type="text/javascript"></script>
-<script src="/js/jquery-oauthpopup.js?v=4.2.7" type="text/javascript"></script>
-<script src="/js/jquery-paginate.min.js?v=4.2.7" type="text/javascript"></script>
-<script src="/js/jquery-dateformat.min.js?v=4.2.7" type="text/javascript"></script>
-<script src="/js/script.js?v=4.2.7" type="text/javascript"></script>
-<script src="/js/countdown/jquery.plugin.js" type="text/javascript"></script>
-<script src="/js/countdown/jquery.countdown.js" type="text/javascript"></script>
-<script src="https://www.youtube.com/player_api" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js" type="text/javascript"></script>
-<script src="/js/giveaway.js?v=4.2.7" type="text/javascript"></script>
-<script type="text/javascript">if(top.location != window.location)window.location = '?v=e';</script> <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"13ef801837","applicationID":"138889653","transactionName":"NQEDYRBVW0NTB0ENVgxLIFYWXVpeHQNcElwDEwBMTEddX0U=","queueTime":0,"applicationTime":104,"atts":"GUYAF1hPSE0=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
 </html>
